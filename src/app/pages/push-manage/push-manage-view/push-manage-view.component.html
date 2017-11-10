@@ -1,0 +1,70 @@
+<div id="pushManage" _push_manage_view>
+  <h2 class="title">消息通道</h2>
+
+  <div class="msgSwitch">
+    <span>开关</span>
+    <nz-switch [(ngModel)]="switch"></nz-switch>
+  </div>
+
+  <h2 class="title">推送记录</h2>
+
+
+  <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'" style="margin-top:16px;">
+    <nz-tab *ngFor="let tab of tabs" (nzClick)="switchTab(tab.value)">
+      <ng-template #nzTabHeading>
+        <!-- 推送通知记录 -->
+        {{tab.name}}
+      </ng-template>
+
+      <div class="search-row">
+        <div class="search-item first">
+          <span>通知标题：</span>
+          <input type="text" [(ngModel)]="searchData.title">
+        </div>
+
+        <div class="search-period">
+          <span>通知时间：</span>
+          <nz-datepicker [(ngModel)]="searchData.startDate" [nzShowTime]="false"
+                         [nzFormat]="'YYYY-MM-DD'"></nz-datepicker>
+          ~
+          <nz-datepicker [(ngModel)]="searchData.endDate" [nzShowTime]="false"
+                         [nzFormat]="'YYYY-MM-DD'"></nz-datepicker>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <div class="search-item first">
+          <span>目标用户：</span>
+          <select [(ngModel)]="searchData.targetUser">
+            <option *ngFor="let item of targetUserGroup" [value]="item.value">{{item.name}}</option>
+          </select>
+        </div>
+
+        <div class="search-item">
+          <span>后续动作:</span>
+          <select [(ngModel)]="searchData.thenAction">
+            <option *ngFor="let item of actionGroup" [value]="item.value">{{item.name}}</option>
+          </select>
+        </div>
+
+        <div class="search-item">
+          <span>推送状态:</span>
+          <select [(ngModel)]="searchData.pushStyle">
+            <option *ngFor="let item of pushStyleGroup" [value]="item.value">{{item.name}}</option>
+          </select>
+        </div>
+
+        <button class="search" (click)="search();">搜索</button>
+        <button class="reset" (click)="reset();">重置</button>
+      </div>
+
+      <app-grid-panel *ngIf="tab.value=='notify'" style="margin-top: 24px;" [columns]="notifyColumns"
+                      [options]="notifyOptions" [actions]="notifyActions">
+      </app-grid-panel>
+      <app-grid-panel *ngIf="tab.value=='message'" style="margin-top: 24px;" [columns]="messageColumns"
+                      [options]="messageOptions"></app-grid-panel>
+
+    </nz-tab>
+  </nz-tabset>
+
+</div>

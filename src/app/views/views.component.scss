@@ -1,0 +1,144 @@
+/*
+:host ::ng-deep .logo {
+  background: #3B3A3F;
+  border-radius: 6px;
+  margin: 29px 0px 40px 0px;
+  text-align: center;
+  .z_index_font {
+    margin-top: 4px;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    color: #CCCCCC;
+  }
+}
+
+:host ::ng-deep .ant-layout-sider {
+  background: #3b3a3f;
+}
+
+:host ::ng-deep .ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+:host ::ng-deep .ant-layout-sider-collapsed .ant-menu-submenu-title:after {
+  display: none;
+}
+
+:host ::ng-deep .ant-layout-sider-collapsed .anticon {
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+:host ::ng-deep .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+:host ::ng-deep .trigger:hover {
+  color: #108ee9;
+}
+
+.first-nav{
+  -webkit-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+  font-size:16px;
+  margin-left: -15px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+*/
+
+.ant-menu.ant-menu-light {
+  background-color: transparent;
+  color: #FFB71F;
+  border-right: 1px solid #ffffff;
+}
+
+.layout {
+  height: 100%;
+}
+
+.ant-layout-header {
+  background: #FFCC00;
+  padding: 8px 35px;
+  height: 60px;
+  line-height: initial;
+}
+
+.logo {
+  float: left;
+}
+
+.ant-layout-header {
+  background: #FFCC00;
+  padding: 0px 35px;
+  height: 60px;
+  line-height: 60px;
+  .logo {
+    float: left;
+    margin: 10px 0px;
+    height: 40px;
+  }
+  .userIcon {
+    height: 40px;
+    margin: 10px 0px;
+    float: right;
+    .user-text {
+      margin-right: 40px;
+      padding-left: 35px;
+      background: url("../../assets/img/text.png") no-repeat left center;
+      float: left;
+      height: 40px;
+      span {
+        display: block;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+.ant-menu-vertical .ant-menu-item, .ant-menu-inline {
+  .ant-menu-item:last-child {
+    border-bottom: none;
+  }
+  .ant-menu-item {
+    height: 64px;
+    line-height: 64px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #5E6D82;
+    padding: 0 20px;
+    letter-spacing: 0;
+    border: none;
+    border-bottom: 2px solid #C0CCDA;
+  }
+  .ant-menu-item-selected {
+    background-color: transparent;
+    i {
+      color: #FFCC00;
+    }
+    span {
+      color: #FF6600;
+    }
+  }
+}
+
+.ant-breadcrumb {
+  font-size: 13px;
+  color: #5E6D82;
+  letter-spacing: 0;
+}
+
+.ant-menu-inline .ant-menu-item:after, .ant-menu-vertical .ant-menu-item:after {
+  display: none;
+}
+
+.nav-icon {
+  margin-right: 16px;
+  font-size: 16px;
+}

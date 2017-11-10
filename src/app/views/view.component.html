@@ -1,0 +1,32 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo">
+      <img src="../../assets/img/logo1.png"></div>
+    <div class="userIcon">
+      <div class="user-text"><span>文档</span></div>
+      <nz-avatar nzSize="large" nzIcon="user" class=""></nz-avatar>
+    </div>
+
+  </nz-header>
+  <nz-layout>
+    <nz-sider [nzWidth]="200" style="background:#fff;">
+      <ul nz-menu [nzMode]="'inline'">
+        <li nz-menu-item routerLink="/views/appList" routerLinkActive="ant-menu-item-selected">
+          <span title><i class="fa fa-cube nav-icon"></i>应用列表</span>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout style="padding:0 24px 24px;height: 100%">
+      <!-- <nz-breadcrumb style="margin:12px 0;" [nzSeparator]="'>'">
+         <span style="margin-right: 6px">当前位置:</span>
+         <nz-breadcrumb-item>List</nz-breadcrumb-item>
+         <nz-breadcrumb-item>App</nz-breadcrumb-item>
+       </nz-breadcrumb>-->
+
+      <nz-content style="background:#fff;">
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>
+

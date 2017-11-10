@@ -1,0 +1,7 @@
+<nz-radio-group [(ngModel)]="radioValue">
+  <label nz-radio-button *ngFor="let item of store" [nzValue]="item?.value" (click)="radioSelect($event,item)">
+    <span>{{item?.name}}</span>
+  </label>
+
+
+</nz-radio-group>

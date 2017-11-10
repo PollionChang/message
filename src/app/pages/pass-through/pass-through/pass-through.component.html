@@ -1,0 +1,117 @@
+<div class="pass-container">
+  <div class="pass-header">
+    <h3 class="pass-title">目标平台</h3>
+  </div>
+  <div class="pass-body">
+    <nz-radio-group [(ngModel)]="radioValue">
+      <label nz-radio [nzValue]="'A'">
+        <i class="anticon anticon-android radio-icon"></i>
+        <span>Android</span>
+      </label>
+    </nz-radio-group>
+
+  </div>
+</div>
+<div class="pass-container">
+  <div class="pass-header">
+    <h3 class="pass-title">透传内容</h3>
+  </div>
+  <div class="pass-body">
+    <div class="base-clum ">
+      <p>描述：</p>
+      <font color="red">*</font>
+      <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'Basic usage'" (ngModelChange)="_console($event)"></nz-input>
+      <p>{{inputValue}}</p>
+    </div>
+    <div class="base-clum ">
+      <p style="vertical-align: top">通知内容：</p>
+      <font color="red" style="vertical-align: top;">*</font>
+      <nz-input [(ngModel)]="inputValueTwo" nzType="textarea" [nzAutosize]="autosize" nzPlaceHolder=""></nz-input>
+    </div>
+  </div>
+
+</div>
+
+<div class="pass-container">
+  <div class="pass-header">
+    <h3 class="pass-title">目标用户选择</h3>
+  </div>
+  <div class="pass-body">
+    <div class="base-clum">
+      <p>定速推送 :</p>
+      <nz-radio-group [(ngModel)]="radioValue">
+        <label nz-radio [nzValue]="'A'">
+          <span>全部用户</span>
+        </label>
+        <label nz-radio [nzValue]="'B'">
+          <span>特定用户</span>
+        </label>
+      </nz-radio-group>
+    </div>
+    <div class="base-clum appname">
+      <p></p>
+      <div *ngIf="radioValue==='B'" class="cid-upload">
+        <span class="org_bot_cor cor2"></span>
+        <span class="org_bot_cor cor1"></span>
+
+        <nz-radio-group [(ngModel)]="radioValue" style="    margin: 15px 0px;">
+          <label nz-radio [nzValue]="'B'">
+            <span>按CID</span>
+          </label>
+        </nz-radio-group>
+        <div class="base-clum">
+          <p>CID列表</p>
+          <font color="red">*</font>
+          <div class="content">
+            <div>
+              <div class="file-input">
+                <div class="input-group file-caption-main">
+                  <div class="file-caption form-control  kv-fileinput-caption icon-visible">
+                    <span class="file-caption-icon"><i class="glyphicon glyphicon-file"></i></span>
+                    <input class="file-caption-name" onkeydown="return false;" onpaste="return false;">
+                  </div>
+                  <div class="input-group-btn">
+                    <button type="button" class="btn">浏览</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+
+
+          </div>
+          <button nz-button [nzType]="'default'" (click)="uploadFile()">
+            <span class="btn-span">点击上传</span>
+          </button>
+
+        </div>
+        <div class="tips">
+          请上传正确的用户名单，需用"回车键"换行分割，最大20M.txt文件<br>格式需要为UTF-8格式
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="pass-container">
+  <div class="pass-header">
+    <h3 class="pass-title">推送设置</h3>
+  </div>
+  <div class="pass-body">
+    <div class="base-clum">
+      <p>推送方式：</p>
+      <nz-radio-group [(ngModel)]="radioValue">
+        <label nz-radio [nzValue]="'A'">
+          <span>即时</span>
+        </label>
+        <label nz-radio [nzValue]="'B'">
+          <span>定时</span>
+        </label>
+      </nz-radio-group>
+    </div>
+
+  </div>
+
+</div>

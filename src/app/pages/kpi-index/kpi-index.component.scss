@@ -1,0 +1,60 @@
+.app_list_content {
+  background: #fff;
+  padding: 0 20px;
+  .head {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    h3 {
+      height: 50px;
+      line-height: 50px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    button {
+      position: absolute;
+
+      border: none;
+      width: 120px;
+      top: 8px;
+      right: 0;
+      height: 34px;
+      font-size: 14px;
+      color: #000000;
+      background: #FFCC00;
+    }
+  }
+  .app_list_content_detail {
+    padding-bottom: 50px;
+    nz-table thead tr {
+      background: #EFEFEF;
+      font-size: 14px;
+      height: 44px;
+      line-height: 44px;
+      padding: 0;
+      th {
+        padding: 0;
+        border-top: 2px solid #D7DDE4;
+      }
+      th:nth-child(1) {
+        padding-left: 20px;
+      }
+    }
+    nz-table tbody tr td {
+      height: 70px;
+      line-height: 70px;
+      border-bottom: 2px solid #D7DDE4;
+      font-size: 14px;
+      color: #647286;
+      a {
+        color: #FF6E0C;
+        border-right: 1px solid #ccc;
+        padding: 0 10px;
+        text-decoration: none;
+      }
+      a:nth-last-child(1) {
+        border: none;
+      }
+    }
+  }
+}

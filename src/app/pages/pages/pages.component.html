@@ -1,0 +1,62 @@
+<nz-layout class="layout">
+  <nz-header>
+    <div class="logo">
+      <img src="../../../assets/img/logo1.png">
+      <!-- <p class="z_index_font" [ngStyle]="{'display':isCollapsed?'none':'inline'}">虎瑞互动营销平台</p>-->
+    </div>
+    <div class="userIcon">
+      <div class="user-text"><span>文档</span></div>
+      <nz-avatar nzSize="large" nzIcon="user" class=""></nz-avatar>
+    </div>
+
+  </nz-header>
+  <nz-layout>
+    <nz-sider [nzWidth]="200" style="background:#fff;">
+      <div class="select-left">
+        <nz-select style="width: 180px;height: 35px;" [(ngModel)]="selectedOption">
+          <nz-option
+            *ngFor="let option of options"
+            [nzLabel]="option.label"
+            [nzValue]="option"
+            [nzDisabled]="option.disabled">
+          </nz-option>
+        </nz-select>
+      </div>
+      <ul nz-menu [nzMode]="'inline'" class="page-nav">
+        <li nz-submenu [nzOpen]="true">
+          <span title><i class="icon-hy-nav nav-icon"></i>创建推送</span>
+          <ul>
+            <li nz-menu-item routerLink="/pages/pushNotify" routerLinkActive="ant-menu-item-selected">推送通知</li>
+            <li nz-menu-item routerLink="/pages/passThrough" routerLinkActive="ant-menu-item-selected">透传消息</li>
+
+          </ul>
+        </li>
+        <li nz-submenu>
+          <span title><i class="fa fa-bar-chart nav-icon"></i>数据统计</span>
+          <ul>
+            <li nz-menu-item routerLink="/pages/pushManage" routerLinkActive="ant-menu-item-selected">推送管理</li>
+            <li nz-menu-item>推送数据</li>
+            <li nz-menu-item>日志管理</li>
+          </ul>
+        </li>
+        <li nz-submenu>
+          <span title><i class="fa fa-cogs nav-icon"></i>配置管理</span>
+          <ul>
+            <li nz-menu-item routerLink="/pages/applConfig" routerLinkActive="ant-menu-item-selected">TV应用配置</li>
+            <li nz-menu-item>账号管理</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout style="padding:0 24px 24px;height: 100%">
+      <nz-breadcrumb style="margin:12px 0;" [nzSeparator]="'>'">
+        <span style="margin-right: 6px">当前位置:</span>
+        <nz-breadcrumb-item>List</nz-breadcrumb-item>
+        <nz-breadcrumb-item>App</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <nz-content style="background:#fff;">
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

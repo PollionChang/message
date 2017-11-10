@@ -1,0 +1,39 @@
+<div class="app_list_content">
+  <div class="head">
+    <h3>应用列表</h3>
+    <button nz-button [nzType]="'default'" (click)="addApplication()">
+      <span>登记应用</span>
+    </button>
+  </div>
+  <div class="app_list_content_detail">
+    <nz-table #nzTable [nzDataSource]="data" [nzIsPagination]="false">
+      <thead nz-thead>
+      <tr>
+        <th nz-th><span>图标</span></th>
+        <th nz-th><span>应用名称</span></th>
+        <th nz-th><span>平台</span></th>
+        <th nz-th><span>今日新增用户</span></th>
+        <th nz-th><span>累计激活用户</span></th>
+        <th nz-th style="padding: 0px 18px;"><span>操作</span></th>
+      </tr>
+      </thead>
+      <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+        <td nz-td><img src="{{data.picurl}}" style="vertical-align: text-bottom;padding-left: 10px;"></td>
+        <td nz-td>{{data.name}}</td>
+        <td nz-td><i class="anticon anticon-android" style="color: #61CA3C;font-size: 16px;"></i></td>
+        <td nz-td>{{data.newuser}}</td>
+        <td nz-td>{{data.alluser}}</td>
+        <td nz-td>
+            <span>
+              <a href="javascript:;">创建推送</a>
+              <a href="javascript:;">数据报表</a>
+              <a href="javascript:;">应用配置</a>
+              <a href="javascript:;">下载应用</a>
+            </span>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

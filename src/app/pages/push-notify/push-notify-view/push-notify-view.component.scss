@@ -1,0 +1,217 @@
+
+#pushNotify{
+    position: relative;
+    width:100%;
+    height:100%;
+    font-size: 14px;
+    padding-right:20px;
+}
+
+.title{
+    font-size:14px;
+    margin-left:20px;
+    color: #1F2D3D;
+    letter-spacing: 0;
+    line-height: 47px;
+    height:47px;
+    font-weight: bold;
+    border-bottom:1px solid #C0CCDA;
+}
+
+input,textarea{
+    padding:5px;
+    border-radius: 4px;
+    background: #F9F9F9;
+    border: 1px solid #C0CCDA;
+}
+
+
+
+.rowItem {
+    position: relative;
+    margin-top:24px;
+    >label{
+        position: relative;
+        display: inline-block;
+        padding:0px 20px;
+        width:130px;
+        color: #5E6D82;
+        letter-spacing: 0;
+        line-height: 14px;
+        text-align: left;
+    }
+    >label.top{
+        vertical-align: top;
+        margin-top:5px;
+    }
+    >label.required::after{
+        content: '*';
+        width: 5px;
+        height: 8px;
+        color: red;
+        position: absolute;
+        right: 4px;
+        top: 0px;
+        bottom: 0px;
+        margin: auto;
+        
+    }
+    .content{
+        display: inline-block;
+    }
+}
+
+
+// 消息展示
+#msgView{
+    .msgContent{
+        position: relative;
+        display: inline-block;
+        width:536px;
+        input{
+            width:400px;
+        }
+        textarea{
+            width:400px;
+            height: 120px;
+        }
+    }
+
+    .preview {
+        position: relative;
+        vertical-align: top;
+        display: inline-block;
+        width:378px;
+        height:235px;
+        margin-left:28px;
+        margin-top:57px;
+        padding:8px;
+        padding-bottom:23px;
+        img{
+            width:362px;
+            height:204px;
+        }
+        .msg-over{
+            position: absolute;
+            right:20px;
+            top:20px;
+        }
+    }
+}
+
+
+
+#userChoice{
+    margin-top:20px;
+    position: relative;
+    width:960px;
+
+    .byCID{
+        width:813px;
+        height:160px;
+        margin-top: 17px;
+        border:1px solid #C0CCDA;
+        border-radius: 4px;
+        padding:12px;
+        input[type='file']{
+            width:360px;
+            height:34px;
+        }
+        .tip{
+            width:360px;
+            padding:2px;
+        }
+
+        .uploadDiv{
+            height:34px;
+            position: relative;
+            display: inline-block;
+            input[type="file"]{
+                position: absolute;
+                top:0px;
+                left:0px;
+                width:360px;
+                height:34px;
+                opacity: 0;
+                z-index:999;
+            }
+            .over-input{
+                position: absolute;
+                top:0px;
+                left:0px;
+                width:360px;
+                height:34px;
+                padding:5px;
+                background: #F9F9F9;
+                border: 1px solid #C0CCDA;
+                border-radius: 4px;
+                .error {
+                    color:red;
+                }
+                .select{
+                    position: absolute;
+                    height:100%;
+                    top:6px;
+                    right:20px;
+                }
+            }
+        }
+        #clickUpload{
+            opacity: 0;
+            width:360px;
+            height:34px;
+            margin-left:20px;
+            background: #FFCC00;
+            border-radius: 4px;
+        }
+        
+    }
+
+    // 打开链接
+    .linkUrl{
+        margin-top:17px;
+        width:813px;
+        height:76px;
+        padding:16px 21px;
+        border: 1px solid #C0CCDA;
+        border-radius: 4px;
+    }
+
+    .downAppli{
+        margin-top:17px;
+        width:813px;
+        height:310px;
+        border: 1px solid #C0CCDA;
+        border-radius: 4px;
+        .rowItem{
+            margin-top:18px;
+        }
+        textarea{ height:120px; }
+    }
+}
+
+
+#pushConfig{
+    margin-top:20px;
+    width:960px;
+}
+
+.actionDiv{
+    width:100%;
+    height:77px;
+    text-align: center;
+    padding:20px;
+    #notifyPreview{
+        margin:0 auto;
+        background: #FFCC00;
+        border-radius: 4px;
+        width:180px;
+        height:37px;
+    }
+}
+
+nz-datepicker,/*  nz-timepicker */{
+    width:175px;
+    height:36px;
+}
+

@@ -1,0 +1,80 @@
+
+<div id="preContent">
+
+  <div class="rowItem">
+    <label>通知样式 :</label>
+    <div class="content" >
+        {{_info.pushStyle}}
+    </div>
+  </div>
+
+  <div class="rowItem">
+    <label class="top">展示式通知 :</label>
+    <div class="content" >
+      <!-- 会获得该应用的AppId, AppKey, Appsecret。 其中AppID和AppKey是客户端的身份标识，
+      在客户端SDK初始化时使用：
+      AppSecret是服务器端的身份标识，在使用。。。？ -->
+      {{_info.content}}
+    </div>
+  </div>
+
+  <div class="split"></div>
+
+  <div class="rowItem ">
+    <label>目标用户 :</label>
+    <span>{{_info.targetUser}}<!-- CID用户列表 --></span>
+  </div>
+
+  <div class="rowItem">
+    <label>后续动作 :</label>
+    <span>{{_info.thenAction}}</span>
+  </div>
+
+  <div class="rowItem">
+      <label>链接地址 :</label>
+      <span>{{_info.linkHref}}</span>
+  </div>
+
+  <div class="split"></div>
+
+  <div class="rowItem ">
+      <label>推送方式 :</label>
+      <span>{{_info.pushStyle}}</span>
+  </div>
+
+  <div class="rowItem">
+      <label>推送时间 :</label>
+      <span>{{_info.pushDate + _info.pushTime}}</span>
+  </div>
+
+  <div class="rowItem">
+      <label>定时展示 :</label>
+      <span>xx??</span>
+  </div>
+
+  <div class="split"></div>
+
+  <div class="rowItem">
+      <label>预计人数 :</label>
+      <span>{{count}}</span>
+  </div>
+
+
+  <div class="testPreview">
+      <div class="rowItem">
+          <label class="top">测试预览 :</label>
+          <div class="content">
+            <input type="text" placeholder="请输入正确的CID">
+            <button>预览</button>
+            <div class="tip">可以选择CID进行预览，发送的消息不计入推送统计！</div>
+          </div>  
+      </div>
+  </div>
+
+  <div class="actions">
+      <button class="cancel" (click)="closeModal();" >取消</button>
+      <button class="ensure" (click)="closeModal();" >确定</button>
+  </div>
+      
+
+</div>

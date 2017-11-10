@@ -1,0 +1,83 @@
+#appregister {
+  //基础样式
+  .appregister-item {
+    background: #fff;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    h3 {
+      font-size: 14px;
+      color: #1F2D3D;
+      letter-spacing: 0;
+      font-weight: bold;
+      height: 48px;
+      line-height: 48px;
+      border-bottom: 2px solid #E0E6ED;
+      margin: 0px 20px;
+    }
+    .base-clum {
+      width: 100%;
+      margin: 25px 20px 0px 20px;
+      p {
+        display: inline-block;
+        width: 70px;
+        font-size: 14px;
+        margin-right: 10px;
+        color: #5E6D82;
+      }
+      i {
+        color: #D0021B;
+      }
+      span {
+        font-size: 14px;
+        color: #5E6D82;
+      }
+    }
+    input {
+      width: 360px;
+      height: 34px;
+      background: #F9F9F9;
+      border: 1px solid #C0CCDA;
+      border-radius: 4px;
+      padding-left: 10px;
+      outline: none;
+      font-size: 14px;
+      color: #99A9BF;
+      letter-spacing: 0;
+    }
+  }
+  //非公共
+  .imgbg {
+    vertical-align: middle;
+    width: 48px;
+    height: 48px;
+    border: 1px dotted #979797;
+    display: inline-block;
+    background: #F9F9F9;
+    cursor: pointer;
+  }
+
+  .submit {
+    button {
+      width: 100px;
+      height: 36px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    button:nth-child(1) {
+      background: #F4F4F4;
+    }
+    button:nth-child(2) {
+      border: none;
+      background: #FFCC00;
+    }
+  }
+
+}
+
+.ant-btn {
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: 0;
+}
+

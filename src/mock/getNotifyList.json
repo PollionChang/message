@@ -1,0 +1,25 @@
+{
+    "errcode": 0,
+    "errmsg": "success",
+    "subcode": "success",
+    "submsg": "成功",
+    "subdesc": "",
+    "bizResult": {
+      "list": [{
+        "title": "xxx",
+        "pushDate": "2017-03-26",
+        "targetUser": "ddd",
+        "thenAction": "打开应用",
+        "showStyle": "安卓原生",
+        "status": 0
+    }, {
+        "title": "xxx2",
+        "pushDate": "2017-03-26",
+        "targetUser": "ddd",
+        "thenAction": "打开应用",
+        "showStyle": "安卓原生",
+        "status": 1
+    }]
+    }
+  }
+  

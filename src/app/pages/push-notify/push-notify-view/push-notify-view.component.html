@@ -1,0 +1,149 @@
+
+<div id="pushNotify" class="override">
+
+    <h2 class="title">消息展示</h2>
+    <!-- 消息展示 -->
+    <div id="msgView">
+
+      <div class="msgContent">
+        <div class="rowItem">
+          <label>目标平台 :</label>
+          <span>推送通知目前仅支持安卓用户</span>
+        </div>
+        <div class="rowItem">
+          <label>展示样式 :</label>
+          <nz-radio-group [(ngModel)]="msgInfo.showStyle">
+            <label *ngFor="let item of showStyleGroup" nz-radio [nzValue]="item.value">
+                <span>{{item.name}}</span>
+            </label>
+          </nz-radio-group>
+        </div>
+        <div class="rowItem">
+          <label class="required">描述 :</label>
+          <input type="text" placeholder="请输入通知标题" [(ngModel)]="msgInfo.describe">
+        </div>
+        <div class="rowItem">
+          <label class="top required">通知内容 :</label>
+          <textarea  cols="30" rows="10" placeholder="请输入通知内容" [(ngModel)]="msgInfo.content"></textarea>
+        </div> 
+      </div>
+
+      <!-- 右侧通知内容预览 -->
+      <div class="preview">
+          <img src="./../../../../assets/img/bg.jpg" alt="消息预览背景图片">
+          <div class="msg-over">{{msgInfo.content}}</div>
+      </div>
+    
+    </div>
+    
+
+    <h2 class="title">目标客户选择</h2>
+    <div id="userChoice">
+        <div class="rowItem">
+          <label class="top" >定速推送 :</label>
+          <div class="content">
+              <nz-radio-group [(ngModel)]="targetCustom.targetUser">
+                <label *ngFor="let item of targetUserGroup" nz-radio [nzValue]="item.value">
+                    <span>{{item.name}}</span>
+                </label>
+              </nz-radio-group>
+              <!-- 选定用户 -->
+              <div class="byCID" *ngIf="targetCustom.targetUser=='special' ">
+                  <nz-radio-group [(ngModel)]="byCID">
+                      <label nz-radio [nzValue]="'byCID'">
+                        <span>按CID</span>
+                      </label>
+                  </nz-radio-group>
+                  <div class="rowItem">
+                      <label class="top">CID列表</label>
+                      <div class="content">
+                          <div class="uploadDiv">
+                              <input type="file" #upload (change)="selectFile(upload,message);">
+                              <div class="over-input">
+                                <span #message>{{uploadFileName}}</span>
+                                <span class="select">浏览</span>
+                              </div>
+                          </div>
+                          <button id="clickUpload" >点击上传</button>
+                          
+                          <div class="tip">
+                            请上传正确的用户名单，需要"回车键"换行分割，最大20M ，txt文件格式需要为UTF-8格式
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+        </div>
+
+
+        <div class="rowItem">
+          <label class="top">后续动作 :</label>
+          <div class="content">
+              <nz-radio-group [(ngModel)]="targetCustom.thenAction">
+                <label *ngFor="let item of actionGroup" nz-radio [nzValue]="item.value">
+                    <span>{{item.name}}</span>
+                </label>
+              </nz-radio-group>
+              <div class="linkUrl" *ngIf="targetCustom.thenAction=='open' ">
+                链接地址：<input type="text" placeholder="输入有效可访问链接" [(ngModel)]="targetCustom.linkUrl">
+              </div>
+              <div class="downAppli" *ngIf="targetCustom.thenAction=='download' ">
+                    <div class="rowItem">
+                      <label class="required">应用名称 :</label>
+                      <input type="text" placeholder="请输入应用名称" [(ngModel)]="targetCustom.appName">
+                    </div>
+                    <div class="rowItem">
+                        <label class="required">弹窗标题 :</label>
+                        <input type="text" placeholder="请输入弹窗标题" [(ngModel)]="targetCustom.popTitle">
+                      </div>
+                    <div class="rowItem">
+                      <label class="top required">弹窗内容 :</label>
+                      <input type="text" placeholder="输入弹窗内容" [(ngModel)]="targetCustom.popContent">
+                    </div>
+                    <div class="rowItem">
+                      <label class="top required">下载地址 :</label>
+                      <textarea  cols="30" rows="10" placeholder="请输入下载地址" [(ngModel)]="targetCustom.downUrl"></textarea>
+                    </div>
+              </div>
+          </div>
+        </div>
+
+    </div> 
+    
+
+    <!-- 推送设置 -->
+    <h2 class="title">推送设置</h2>
+    <div id="pushConfig">
+          <div class="rowItem">
+            <label>推送方式</label>
+            <nz-radio-group [(ngModel)]="pushConfig.pushStyle">
+              <label *ngFor="let item of pushStyleGroup" nz-radio [nzValue]="item.value">
+                  <span>{{item.name}}</span>
+              </label>
+            </nz-radio-group>
+          </div>
+          <div class="rowItem" *ngIf="pushConfig.pushStyle=='timing' " >
+            <label>时间选择 :</label>
+            <div class="content">
+                <!-- HH :mm :ss -->
+                <nz-datepicker [(ngModel)]="pushConfig.pushDate" [nzShowTime]="false" [nzFormat]="'YYYY-MM-DD'"></nz-datepicker>
+                <nz-timepicker [(ngModel)]="pushConfig.pushTime"></nz-timepicker>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="actionDiv">
+          <button id="notifyPreview" (click)="preview();" >
+              发送预览
+          </button>
+      </div>
+      
+
+</div>
+
+
+
+
+

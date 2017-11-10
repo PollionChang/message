@@ -1,0 +1,56 @@
+<div id="appregister">
+  <!--登记应用-->
+  <div class="appregister appregister-item">
+    <h3>登记应用</h3>
+    <div class="base-clum">
+      <p>应用图片：</p>
+      <font color="red">*</font>
+      <div class="imgbg" ngClass="" (click)="uploadimg($event)"></div>
+      <input #fileInput (change)="imgupload($event)" id="imgupload" type="file" style="display: none;" name="file"
+             multiple="multiple" accept="image/*">
+      <span style="padding-left: 10px;font-size: 12px;
+color: #8492A6;">点击图片上传25K大小以内的图片</span>
+    </div>
+    <div class="base-clum appname">
+      <p>应用名称：</p>
+      <font color="red">*</font>
+      <input [(ngModel)]="appname" placeholder="" type="text">
+    </div>
+    <div class="base-clum">
+      <p>应用类型：</p>
+      <font color="red">*</font>
+      <nz-select style="width: 120px;" [(ngModel)]="appType" nzAllowClear>
+        <nz-option
+          *ngFor="let option of typeOptions"
+          [nzLabel]="option.label"
+          [nzValue]="option"
+          [nzDisabled]="option?.disabled">
+        </nz-option>
+      </nz-select>
+    </div>
+    <div class="base-clum">
+      <p>应用平台：</p>
+      <font color="red">*</font>
+      <i class="anticon anticon-android" style="padding:0 3px;font-size: 18px;color:#61CA3C;"></i>
+      <span>Android</span>
+    </div>
+  </div>
+  <!--应用平台-->
+  <div class="appregistertabel appregister-item">
+    <h3>应用平台</h3>
+    <div class="base-clum">
+      <p>Android</p>
+    </div>
+    <div class="base-clum">
+      <p>应用标识：</p>
+      <font color="red">*</font>
+      <input [(ngModel)]="appsign" type="text">
+      <i class="anticon anticon-question-circle" style="font-size: 24px;color: #C0CCDA;padding-left: 20px;"></i>
+    </div>
+  </div>
+
+  <div class="submit" style="text-align: center;margin-bottom:30px;">
+    <button nz-button>取消</button>
+    <button nz-button>确定</button>
+  </div>
+</div>
