@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {IBreadcrumb} from './breadcrumbs.model';
-import {Observable, Observer, Subject} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
+import 'rxjs/add/operator/share';
 
 @Injectable()
 export class BreadcrumbsService {
@@ -14,18 +16,18 @@ export class BreadcrumbsService {
     console.log('面包屑服务实例化');
     this.breadcrumbs = [];
     this.breadcrumbsSource = new Subject<IBreadcrumb[]>();
-    this.breadcrumbsChanged$ = this.breadcrumbsSource.asObservable();
+    this.breadcrumbsChanged$ = this.breadcrumbsSource.asObservable().share();
 
     if (localStorage.getItem('prefixedBreadcrumbs') != null) {
       this.prefixedBreadcrumbs = (JSON.parse(localStorage.getItem('prefixedBreadcrumbs')));
     }
   }
 
-  //Store the breadcrumbs of the current route
+  // Store the breadcrumbs of the current route
   public store(breadcrumbs: IBreadcrumb[]) {
     this.breadcrumbs = breadcrumbs;
 
-    let allBreadcrumbs = this.prefixedBreadcrumbs.concat(this.breadcrumbs);
+    const allBreadcrumbs = this.prefixedBreadcrumbs.concat(this.breadcrumbs);
     this.breadcrumbsSource.next(allBreadcrumbs);
 
   }
@@ -35,23 +37,27 @@ export class BreadcrumbsService {
   public storePrefixed(breadcrumb: IBreadcrumb) {
     this.storeIfUnique(breadcrumb);
     localStorage.setItem('prefixedBreadcrumbs', JSON.stringify(this.prefixedBreadcrumbs));
-    let allBreadcrumbs = this.prefixedBreadcrumbs.concat(this.breadcrumbs);
+    const allBreadcrumbs = this.prefixedBreadcrumbs.concat(this.breadcrumbs);
     this.breadcrumbsSource.next(allBreadcrumbs);
 
   }
 
 
-  //Return the breadcrumbs
+  // Return the breadcrumbs
   public get() {
     return this.breadcrumbsChanged$;
   }
 
 
+  public getData() {
+    return this.breadcrumbs;
+  }
+
   // storeIfUnique checks if there are any duplicate prefixed breadcrumbs
   private storeIfUnique(newBreadcrumb: IBreadcrumb) {
     let isUnique = true;
     for (let crumb of this.prefixedBreadcrumbs) {
-      if (newBreadcrumb.url == crumb.url) {
+      if (newBreadcrumb.url === crumb.url) {
         isUnique = false;
         break;
       }

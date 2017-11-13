@@ -12,7 +12,7 @@ import {ReqInterceptor} from './share/service/interceptor';
 import {HttpService} from './share/service/http.service';
 import {CookieService} from './share/service/cookie.service';
 import {HyToasterModule} from './share/components/hy-toaster/hy-toaster.module';
-import {BreadcrumbsModule} from './share/components/breadcrumbs/breadcrumbs.module';
+import {BreadcrumbsService} from './share/components/breadcrumbs/breadcrumbs.service';
 
 @NgModule({
   declarations: [
@@ -20,15 +20,19 @@ import {BreadcrumbsModule} from './share/components/breadcrumbs/breadcrumbs.modu
   ],
   imports: [
     ShareModule,
-    BrowserModule, BreadcrumbsModule,
+    BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgZorroAntdModule.forRoot(),
+    NgZorroAntdModule.forRoot({
+      extraFontName: 'anticon',
+      extraFontUrl: '../assets/font/iconfont'
+    }),
     HyToasterModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
+    BreadcrumbsService,
     LoadingMaskService, {
       provide: HTTP_INTERCEPTORS,
       useClass: ReqInterceptor,
@@ -38,9 +42,7 @@ import {BreadcrumbsModule} from './share/components/breadcrumbs/breadcrumbs.modu
     CookieService,
     ShareModule.forRoot().providers
   ],
-  exports: [
-    BreadcrumbsModule
-  ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

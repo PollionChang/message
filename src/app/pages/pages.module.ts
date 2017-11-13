@@ -9,25 +9,36 @@ const routes: Routes = [
   {
     path: '',
     component: PagesComponent,
+    data: {
+      breadcrumb: 'pages'
+    },
     children: [
       {
         path: 'pushNotify',
-        data: {title: '推送通知t'},
+        data: {
+          breadcrumb: '推送通知'
+        },
         loadChildren: './push-notify/push-notify.module#PushNotifyModule'
       },
       {
         path: 'pushManage',
-        data: {title: '推送管理'},
+        data: {
+          breadcrumb: '推送管理'
+        },
         loadChildren: './push-manage/push-manage.module#PushManageModule',
       },
       {
         path: 'applConfig',
-        data: {title: 'TV应用配置'},
+        data: {
+          breadcrumb: 'TV应用配置'
+        },
         loadChildren: './appl-config/appl-config.module#ApplConfigModule',
       },
       {
         path: 'passThrough',
-        data: {title: '透传消息'},
+        data: {
+          breadcrumb: '透传消息'
+        },
         loadChildren: './pass-through/pass-through.module#PassThroughModule',
       },
       {

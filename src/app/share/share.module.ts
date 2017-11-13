@@ -15,7 +15,7 @@ import {
   HY_USER_OPTIONS_TOKEN
 } from '../../data/CONFIG';
 import {RadioGroupModule} from './components/radio-group/radio-group.module';
-
+import {BreadcrumbsModule} from './components/breadcrumbs/breadcrumbs.module';
 import {GridPanelModule} from './components/grid-panel/grid-panel.module';
 
 export interface AuthOptions {
@@ -57,7 +57,7 @@ export const Local_CORE_PROVIDER = [
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule, BreadcrumbsModule,
     HttpClientModule,
     ReactiveFormsModule, RadioGroupModule,
     NgZorroAntdModule, GridPanelModule
@@ -66,7 +66,7 @@ export const Local_CORE_PROVIDER = [
     LoginComponent
   ],
   exports: [
-    LoginComponent, NgZorroAntdModule, RadioGroupModule, GridPanelModule
+    BreadcrumbsModule, LoginComponent, NgZorroAntdModule, RadioGroupModule, GridPanelModule
   ],
   providers: [
     {

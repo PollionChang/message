@@ -2,18 +2,16 @@ import {NgModule} from '@angular/core';
 import {BreadcrumbComponent} from './breadcrumbs.component';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
-import {BreadcrumbsService} from './breadcrumbs.service';
+import {NzBreadCrumbModule} from 'ng-zorro-antd';
 
 @NgModule({
   declarations: [
     BreadcrumbComponent
   ],
-  providers: [
-    BreadcrumbsService
-  ],
+  providers: [],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule, NzBreadCrumbModule
   ],
   exports: [BreadcrumbComponent]
 })

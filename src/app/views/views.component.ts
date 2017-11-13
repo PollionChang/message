@@ -5,6 +5,7 @@ import 'rxjs/add/operator/mergeMap';
 import {ToasterService} from '../share/components/hy-toaster/toaster.service';
 import {BreadcrumbsService} from '../share/components/breadcrumbs/breadcrumbs.service';
 
+
 @Component({
   selector: 'app-ngx-pages',
   templateUrl: './view.component.html',

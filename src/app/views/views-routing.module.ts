@@ -20,7 +20,7 @@ const routes: Routes = [
         path: 'registrationApp',
         component: RegistrationAppComponent,
         data: {
-          breadcrumb: '应用列表'
+          breadcrumb: '登记应用'
         },
       },
       {
